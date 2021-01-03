@@ -4,7 +4,8 @@ raytrace_range: 3.0
 footprint: [[0.5, 0.25], [0.5, -0.25], [-0.5, 0.25], [-0.5, -0.25]]
 #robot_radius: ir_of_robot
 
-map_type: voxel
+#map_type: voxel
+map_type: costmap
 origin_z: 0.0
 z_resolution: 0.2
 z_voxels: 2
@@ -14,15 +15,6 @@ max_obstacle_height: 0.60
 inflation_radius: 1.0
 #cost_scaling_factor: 3.0
 observation_sources: scan
-#observation_sources: laser_scan_sensor
-#scan: {sensor_frame: base_link,  observation_persistence: 0.0, max_obstacle_height: 0.4, min_obstacle_height: 0.0, data_type: LaserScan, topic: /scan, marking: true, clearing: true}
-scan: {data_type: LaserScan, topic: scan, marking: true, clearing: true, min_obstacle_height: 0.25, max_obstacle_height: 0.35}
-#scan: {sensor_frame: base_link, data_type: LaserScan, topic: scan, marking: true, clearing: true}
-#laser_scan_sensor: {
-#    sensor_frame: lidar_link,
-#    data_type: LaserScan,
-#    topic: /laser/scan,
-#    marking: true,
-#    clearing: true
-#}
-map_type: costmap
+#scan: {sensor_frame: hokuyo_link, data_type: LaserScan, topic: scan, marking: true, clearing: true, min_obstacle_height: 0.25, max_obstacle_height: 0.35}
+scan: {sensor_frame: laser, data_type: LaserScan, topic: scan, marking: true, clearing: true}
+#scan: {data_type: LaserScan, topic: scan, marking: true, clearing: true}

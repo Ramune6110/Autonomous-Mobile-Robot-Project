@@ -13,17 +13,26 @@
 
   <node pkg="tf" type="static_transform_publisher" name="link3" args="0 0 0 0 0 0 base_link laser 100" />
   
-  <!-- move base -->
+  <!-- move_base -->  
+  <!-- <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+    <param name="base_local_planner" value="dwa_local_planner/DWAPlannerROS" />
+    <rosparam file="$(find 2D_Navigation_Stack)/params/2WD_params/costmap_common_params.yaml" command="load" ns="global_costmap" />
+    <rosparam file="$(find 2D_Navigation_Stack)/params/2WD_params/costmap_common_params.yaml" command="load" ns="local_costmap" />
+    <rosparam file="$(find 2D_Navigation_Stack)/params/2WD_params/local_costmap_params.yaml" command="load" />
+    <rosparam file="$(find 2D_Navigation_Stack)/params/2WD_params/global_costmap_params.yaml" command="load" />
+    <rosparam file="$(find 2D_Navigation_Stack)/params/2WD_params/dwa_local_planner_params.yaml" command="load" />
+    <rosparam file="$(find 2D_Navigation_Stack)/params/2WD_params/move_base_params.yaml" command="load" />
+  </node> -->
+
   <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
     <param name="base_local_planner" value="dwa_local_planner/DWAPlannerROS" />
-    <rosparam file="$(find 2D_Navigation_Stack)/launch/move_base_params.yaml" command="load" />
-    <rosparam file="$(find 2D_Navigation_Stack)/launch/costmap_common_params.yaml" command="load" ns="global_costmap" />
-    <rosparam file="$(find 2D_Navigation_Stack)/launch/costmap_common_params.yaml" command="load" ns="local_costmap" />
-    <rosparam file="$(find 2D_Navigation_Stack)/launch/local_costmap_params.yaml" command="load" />
-    <rosparam file="$(find 2D_Navigation_Stack)/launch/global_costmap_params.yaml" command="load" />
-    <rosparam file="$(find 2D_Navigation_Stack)/launch/base_local_planner_params.yaml" command="load" />
-    <rosparam file="$(find 2D_Navigation_Stack)/launch/dwa_local_planner_params.yaml" command="load" />
-  </node>
+    <rosparam file="$(find 2D_Navigation_Stack)/params/4WD_params/costmap_common_params.yaml" command="load" ns="global_costmap" />
+    <rosparam file="$(find 2D_Navigation_Stack)/params/4WD_params/costmap_common_params.yaml" command="load" ns="local_costmap" />
+    <rosparam file="$(find 2D_Navigation_Stack)/params/4WD_params/local_costmap_params.yaml" command="load" />
+    <rosparam file="$(find 2D_Navigation_Stack)/params/4WD_params/global_costmap_params.yaml" command="load" />
+    <rosparam file="$(find 2D_Navigation_Stack)/params/4WD_params/dwa_local_planner_params.yaml" command="load" />
+    <rosparam file="$(find 2D_Navigation_Stack)/params/4WD_params/move_base_params.yaml" command="load" />
+  </node> 
   
-  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find 2D_Navigation_Stack)/launch/navigation.rviz" />
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find 2D_Navigation_Stack)/rviz/navigation.rviz" />
 </launch>

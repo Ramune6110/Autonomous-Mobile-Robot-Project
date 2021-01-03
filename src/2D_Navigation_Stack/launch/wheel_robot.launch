@@ -19,10 +19,10 @@
     <arg name="headless" value="false" />
   </include>
 
-  <arg name="model" default="$(find 2D_Navigation_Stack)/urdf/two_wheel_robot.xacro"/> 
-  <!-- <arg name="model" default="$(find 2D_Navigation_Stack)/urdf/wheel_robot_base.urdf.xacro"/> -->
   <!-- <arg name="model" default="$(find 2D_Navigation_Stack)/urdf/2WD_laser.urdf.xacro"/> -->
+  <!-- <arg name="model" default="$(find 2D_Navigation_Stack)/urdf/two_wheel_robot.xacro"/> -->
   <!-- <arg name="model" default="$(find 2D_Navigation_Stack)/urdf/4WD_laser.urdf.xacro"/> -->
+  <arg name="model" default="$(find 2D_Navigation_Stack)/urdf/wheel_robot_base.urdf.xacro"/> 
   <param name="robot_description" command="$(find xacro)/xacro $(arg model) --inorder"/>
 
   <!-- Setting gui parameter to true for display joint slider -->
