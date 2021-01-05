@@ -1,8 +1,10 @@
 obstacle_range: 2.5
 raytrace_range: 3.0
-#footprint: [[-0.2,-0.2],[-0.2,0.2], [0.2, 0.2], [0.2,-0.2]]
+#footprint: [[-0.5,-0.5],[-0.5,0.5], [0.5, 0.5], [0.5,-0.5]]
+#footprintは以下の値でないと現状上手くいかない(4輪モデル)
 footprint: [[0.5, 0.25], [0.5, -0.25], [-0.5, 0.25], [-0.5, -0.25]]
-#robot_radius: ir_of_robot
+# 二輪モデル
+#robot_radius: 0.15
 
 #map_type: voxel
 map_type: costmap
