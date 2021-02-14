@@ -31,10 +31,6 @@ double wheel_sep = 0.32;
 double speed_ang = 0.0;
 double speed_lin = 0.0;
 
-// ROS
-ros::NodeHandle nh;
-ros::Subscriber<geometry_msgs::Twist> sub("cmd_vel", &messageCb );
-
 /***********************************************************************
  * Function
  **********************************************************************/
@@ -44,6 +40,10 @@ void messageCb( const geometry_msgs::Twist& msg){
   w_r = (speed_lin/wheel_rad) + ((speed_ang*wheel_sep)/(2.0*wheel_rad));
   w_l = (speed_lin/wheel_rad) - ((speed_ang*wheel_sep)/(2.0*wheel_rad));
 }
+
+// ROS
+ros::NodeHandle nh;
+ros::Subscriber<geometry_msgs::Twist> sub("cmd_vel", &messageCb );
 
 /***********************************************************************
  * prottype
