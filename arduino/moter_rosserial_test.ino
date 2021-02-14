@@ -61,9 +61,9 @@ void setup(){
 }
 
 void loop(){
-  MotorL(w_l*10);
+  MotorL(w_l * 24);
   
-  MotorR(w_r*10);
+  MotorR(w_r*  24);
   
   nh.spinOnce();
 }
