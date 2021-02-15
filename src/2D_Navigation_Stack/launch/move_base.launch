@@ -11,7 +11,7 @@
   <!-- AMCL -->
   <include file="$(find 2D_Navigation_Stack)/launch/amcl.launch"/>
 
-  <node pkg="tf" type="static_transform_publisher" name="link3" args="0 0 0 0 0 0 base_link laser 100" />
+  <!-- <node pkg="tf" type="static_transform_publisher" name="link3" args="0 0 0 0 0 0 base_link laser 100" /> -->
   
   <!-- move_base -->  
   <!-- <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
@@ -34,5 +34,5 @@
     <rosparam file="$(find 2D_Navigation_Stack)/params/4WD_params/move_base_params.yaml" command="load" />
   </node> 
   
-  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find 2D_Navigation_Stack)/rviz/navigation.rviz" />
+  <!-- <node name="rviz" pkg="rviz" type="rviz" args="-d $(find 2D_Navigation_Stack)/rviz/navigation.rviz" /> -->
 </launch>
