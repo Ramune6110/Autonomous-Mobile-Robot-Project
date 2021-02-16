@@ -2,9 +2,9 @@
     <!-- Map server -->
     <arg name="map_file" default="$(find 2D_Navigation_Stack)/maps/MK_room.yaml"/>
     <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" output="screen"/>
-
+    
     <!-- AMCL used for localization -->
-    <include file="$(find 2D_Navigation_Stack)/launch/amcl.launch" />
+    <include file="$(find 2D_Navigation_Stack)/launch/ck9_amcl.launch" />
 
     <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
         <rosparam file="$(find 2D_Navigation_Stack)/params/ck9_params/costmap_common_params.yaml" command="load" ns="global_costmap" />
@@ -13,7 +13,18 @@
         <rosparam file="$(find 2D_Navigation_Stack)/params/ck9_params/global_costmap_params.yaml" command="load" />
         <rosparam file="$(find 2D_Navigation_Stack)/params/ck9_params/base_local_planner_default_params.yaml" command="load" />
         <rosparam file="$(find 2D_Navigation_Stack)/params/ck9_params/move_base_params.yaml" command="load" />
-    </node> 
+    </node>
+    
+      <!-- move_base -->  
+    <!-- <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+      <param name="base_local_planner" value="dwa_local_planner/DWAPlannerROS" />
+      <rosparam file="$(find 2D_Navigation_Stack)/params/2WD_params/costmap_common_params.yaml" command="load" ns="global_costmap" />
+      <rosparam file="$(find 2D_Navigation_Stack)/params/2WD_params/costmap_common_params.yaml" command="load" ns="local_costmap" />
+      <rosparam file="$(find 2D_Navigation_Stack)/params/2WD_params/local_costmap_params.yaml" command="load" />
+      <rosparam file="$(find 2D_Navigation_Stack)/params/2WD_params/global_costmap_params.yaml" command="load" />
+      <rosparam file="$(find 2D_Navigation_Stack)/params/2WD_params/dwa_local_planner_params.yaml" command="load" />
+      <rosparam file="$(find 2D_Navigation_Stack)/params/2WD_params/move_base_params.yaml" command="load" />
+    </node> -->
 
   <node name="rviz" pkg="rviz" type="rviz" args="-d $(find 2D_Navigation_Stack)/rviz/ck9_navigation.rviz" required="true"/>
 </launch>
