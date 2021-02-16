@@ -5,6 +5,20 @@
     
     <!-- AMCL used for localization -->
     <include file="$(find 2D_Navigation_Stack)/launch/ck9_amcl.launch" />
+    
+    <!--Robot Description from URDF-->
+    <arg name="model" default="$(find ck9_gazebo)/urdf/ck9_gazebo.xacro"/> 
+    <param name="robot_description" command="$(find xacro)/xacro $(arg model) --inorder"/>
+
+    <!-- <param name="robot_description" command="$(find xacro)/xacro -inorder $(find ck9_gazebo)/urdf/ck9_gazebo.xacro"/> -->
+    <param name="use_gui" value="true"/>
+
+    <!--Nodes-->
+    <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher"/>
+    <!-- <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher"/> -->
+    <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher" output="screen" >
+      <param name="publish_frequency" type="double" value="50.0" />
+    </node>
 
     <!-- move_base -->  
     <!-- <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
