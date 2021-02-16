@@ -1,9 +1,9 @@
 global_costmap:
   global_frame: map
   # rpliderでnaviationの場合はbase_link
-  #robot_base_frame: base_link
+  robot_base_frame: base_link
   # シミュレーションでロボット動かす場合はbase_footprint
-  robot_base_frame: base_footprint
+  #robot_base_frame: base_footprint
   update_frequency: 1.0
   publish_frequency: 1.0
   transform_tolerance: 0.5
@@ -13,3 +13,18 @@ global_costmap:
   #width: 20.0
   #height: 20.0
   #resolution: 0.1
+
+  static_layer:
+    track_unknown_space: true
+    enabled:              true
+    map_topic:            "map"
+
+  inflation_layer:
+    enabled:              true
+    cost_scaling_factor:  10  
+    inflation_radius:     2.0  
+    track_unknown_space: true
+
+  plugins:
+    - {name: static_layer,        type: "costmap_2d::StaticLayer"}
+    - {name: inflation_layer,     type: "costmap_2d::InflationLayer"}

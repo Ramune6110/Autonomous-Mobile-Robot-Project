@@ -11,6 +11,8 @@
   <!-- We resume the logic in empty_world.launch, changing only the name of 
     the world to be launched -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <!-- <arg name="world_name" value="$(find 2D_Navigation_Stack)/world/space.world"/> -->
+    <!--<arg name="world_name" value="$(find 2D_Navigation_Stack)/world/turtlebot_playground.world"/> -->
     <arg name="world_name" value="worlds/empty.world" />
     <arg name="paused" value="$(arg paused)" />
     <arg name="debug" value="$(arg debug)" />
@@ -19,10 +21,12 @@
     <arg name="headless" value="false" />
   </include>
 
-  <arg name="model" default="$(find 2D_Navigation_Stack)/urdf/two_wheel_robot.xacro"/> 
-  <!-- <arg name="model" default="$(find 2D_Navigation_Stack)/urdf/wheel_robot_base.urdf.xacro"/> -->
+  <!-- <arg name="model" default="$(find 2D_Navigation_Stack)/urdf/mybot.xacro"/> -->
   <!-- <arg name="model" default="$(find 2D_Navigation_Stack)/urdf/2WD_laser.urdf.xacro"/> -->
-  <!-- <arg name="model" default="$(find 2D_Navigation_Stack)/urdf/4WD_laser.urdf.xacro"/> -->
+  <!-- <arg name="model" default="$(find 2D_Navigation_Stack)/urdf/two_wheel_robot.xacro"/> -->
+  <arg name="model" default="$(find 2D_Navigation_Stack)/urdf/4WD_laser.urdf.xacro"/> 
+  <!-- <arg name="model" default="$(find 2D_Navigation_Stack)/urdf/wheel_robot_base.urdf.xacro"/> -->
+  
   <param name="robot_description" command="$(find xacro)/xacro $(arg model) --inorder"/>
 
   <!-- Setting gui parameter to true for display joint slider -->
