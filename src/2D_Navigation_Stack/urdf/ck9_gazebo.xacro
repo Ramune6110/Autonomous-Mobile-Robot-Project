@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="ck9_gazebo">
 
-  <xacro:include filename="$(find ck9_gazebo)/urdf/ck9_gazebo.plugins.xacro" />
+  <xacro:include filename="$(find 2D_Navigation_Stack)/urdf/ck9_gazebo.plugins.xacro" />
 
   <xacro:property name="base_radius" value="0.15"/>
   <xacro:property name="base_len" value="0.056"/>
@@ -63,7 +63,7 @@
       <origin xyz="0.015 0.008 0.038" rpy="-1.571 0 -1.571" />
       <geometry>
         <mesh
-          filename="package://ck9_gazebo/meshes/ck9.stl" />>
+          filename="package://2D_Navigation_Stack/meshes/ck9.stl" />>
         
       </geometry>
     <material name="white"/>
@@ -95,7 +95,7 @@
         <origin xyz="0 0 0" rpy="${pi/2} 0 0"/>
         <geometry>
          <mesh scale="0.001 0.001 0.001"
-          filename="package://ck9_gazebo/meshes/wheel.stl" />
+          filename="package://2D_Navigation_Stack/meshes/wheel.stl" />
           <!--<cylinder radius="${wheel_radius}" length="0.005"/>-->
         </geometry>
       <material name="black"/>
@@ -205,8 +205,11 @@
   <link name="sensor_laser">
     <visual>
       <origin xyz="0.023 -0.004 -0.151" rpy="0 1.571 0" />
+
+      <!-- <origin xyz="0.023 0.015 -0.151" rpy="0 1.571 3.142" /> -->
+
       <geometry>
-        <mesh filename="package://ck9_gazebo/meshes/lidar.stl"/>
+        <mesh filename="package://2D_Navigation_Stack/meshes/lidar.stl"/>
         <!--box size="${laser_size_x} ${laser_size_y} ${laser_size_z}"/-->
       </geometry>
       <material name="black"/>
@@ -228,7 +231,7 @@
     <child link="sensor_laser" />
   </joint>
 
-  <xacro:include filename="$(find ck9_gazebo)/urdf/ck9_gazebo.diff.plugins.xacro"/> 
+  <xacro:include filename="$(find 2D_Navigation_Stack)/urdf/ck9_gazebo.diff.plugins.xacro"/> 
 
 
 </robot>

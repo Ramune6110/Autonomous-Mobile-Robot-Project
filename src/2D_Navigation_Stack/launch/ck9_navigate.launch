@@ -1,21 +1,19 @@
 <launch>
     <!-- Map server -->
-    <arg name="map_file" default="$(find 2D_Navigation_Stack)/maps/MK_room.yaml"/>
+    <!-- <arg name="map_file" default="$(find 2D_Navigation_Stack)/maps/MK_room.yaml"/> -->
+    <arg name="map_file" default="$(find 2D_Navigation_Stack)/maps/gmapping.yaml"/>
     <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" output="screen"/>
     
     <!-- AMCL used for localization -->
     <include file="$(find 2D_Navigation_Stack)/launch/ck9_amcl.launch" />
     
     <!--Robot Description from URDF-->
-    <arg name="model" default="$(find ck9_gazebo)/urdf/ck9_gazebo.xacro"/> 
+    <arg name="model" default="$(find 2D_Navigation_Stack)/urdf/ck9_gazebo.xacro"/> 
     <param name="robot_description" command="$(find xacro)/xacro $(arg model) --inorder"/>
 
-    <!-- <param name="robot_description" command="$(find xacro)/xacro -inorder $(find ck9_gazebo)/urdf/ck9_gazebo.xacro"/> -->
-    <param name="use_gui" value="true"/>
+    <!-- <param name="use_gui" value="true"/> -->
 
-    <!--Nodes-->
     <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher"/>
-    <!-- <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher"/> -->
     <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher" output="screen" >
       <param name="publish_frequency" type="double" value="50.0" />
     </node>
@@ -31,15 +29,14 @@
     </node> -->
     
     <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
-      <!-- <param name="base_local_planner" value="dwa_local_planner/DWAPlannerROS" /> -->
+      <param name="base_local_planner" value="dwa_local_planner/DWAPlannerROS" />
       <rosparam file="$(find 2D_Navigation_Stack)/params/ck9_params_adjustment/costmap_common_params.yaml" command="load" ns="global_costmap" />
       <rosparam file="$(find 2D_Navigation_Stack)/params/ck9_params_adjustment/costmap_common_params.yaml" command="load" ns="local_costmap" />
       <rosparam file="$(find 2D_Navigation_Stack)/params/ck9_params_adjustment/local_costmap_params.yaml" command="load" />
       <rosparam file="$(find 2D_Navigation_Stack)/params/ck9_params_adjustment/global_costmap_params.yaml" command="load" />
-      <rosparam file="$(find 2D_Navigation_Stack)/params/ck9_params/base_local_planner_default_params.yaml" command="load" />
-      <!-- <rosparam file="$(find 2D_Navigation_Stack)/params/ck9_params_adjustment/dwa_local_planner_params.yaml" command="load" /> -->
+      <rosparam file="$(find 2D_Navigation_Stack)/params/ck9_params_adjustment/dwa_local_planner_params.yaml" command="load" />
       <rosparam file="$(find 2D_Navigation_Stack)/params/ck9_params_adjustment/move_base_params.yaml" command="load" />
-    </node> 
+    </node>
 
   <node name="rviz" pkg="rviz" type="rviz" args="-d $(find 2D_Navigation_Stack)/rviz/ck9_navigation.rviz" required="true"/>
 </launch>
