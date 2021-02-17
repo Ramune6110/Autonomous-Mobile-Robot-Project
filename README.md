@@ -17,5 +17,10 @@ AMCL is used for localisation, with DWA local planner planner for path planning.
 <img src="https://user-images.githubusercontent.com/52307432/108243713-ba9d4e00-7191-11eb-98ac-c87bb7d3a83c.jpg" alt="Your image title"  width="400">
 </div>
 
+### STEP3 Assembly
+<div align="center">
+<img src="https://user-images.githubusercontent.com/52307432/108243883-ec161980-7191-11eb-8bca-106ccb291834.jpg" alt="Your image title"  width="400">
+</div>
+
 ## Experiment
 https://user-images.githubusercontent.com/52307432/108242435-41e9c200-7190-11eb-8fa8-cc983a7eed94.mp4
