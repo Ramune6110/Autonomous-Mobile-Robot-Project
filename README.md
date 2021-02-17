@@ -2,8 +2,9 @@
 AMCL is used for localisation, with DWA local planner planner for path planning.
 ## Sensors used:
 1. RPLIDAR A1M8
-2. DC Motor
-3. Encoder 
+2. Arduino Mega 2560
+3. DC Motor
+4. Encoder 
 
 ## Robot production
 
