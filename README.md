@@ -24,9 +24,9 @@ AMCL is used for localisation, with DWA local planner planner for path planning.
 </div>
 
 ## Experiment Movie
-https://user-images.githubusercontent.com/52307432/108242435-41e9c200-7190-11eb-8fa8-cc983a7eed94.mp4
 
 1. Actual situation [Link Here](https://user-images.githubusercontent.com/52307432/108245357-87f45500-7193-11eb-86a6-40e8a15917b9.mp4
 )
-
+2. rviz situation [Link Here](https://user-images.githubusercontent.com/52307432/108245790-0d780500-7194-11eb-8ba5-cb0e6e3e41f9.mp4
+)
 
