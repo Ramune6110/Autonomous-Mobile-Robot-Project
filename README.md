@@ -3,8 +3,8 @@ AMCL is used for localisation, with DWA local planner planner for path planning.
 ## Sensors used:
 1. RPLIDAR A1M8
 2. Arduino Mega 2560
-3. DC Motor
-4. Encoder 
+3. DC Motor with Encoder [Link Here](https://osoyoo.store/products/dc-motor-robotic-car-speed-encoder-9v-for-arduino-raspberry-pi-platform-diy?variant=31930889830511)
+4. Moter Driver [Link Here](https://osoyoo.store/collections/arduino-robot-car-v2-0/products/osoyoo-model-x-motor-driver-module-for-arduino-v2-0-robot-carmodel-2018000800?variant=31648878755951)
 
 ## Robot production
 
