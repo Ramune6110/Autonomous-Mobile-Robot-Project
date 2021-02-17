@@ -1,6 +1,6 @@
-# Autonomous-Rumba-Project using ROS Navigation Stack.
+# Autonomous-Rumba-Project using ROS Navigation Stack
 AMCL is used for localisation, with DWA local planner planner for path planning.
-## Sensors used:
+## Sensors used
 1. RPLIDAR A1M8
 2. Arduino Mega 2560
 3. DC Motor with Encoder [Link Here](https://osoyoo.store/products/dc-motor-robotic-car-speed-encoder-9v-for-arduino-raspberry-pi-platform-diy?variant=31930889830511)
