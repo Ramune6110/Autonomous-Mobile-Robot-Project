@@ -7,8 +7,14 @@ AMCL is used for localisation, with DWA local planner planner for path planning.
 
 ## Robot production
 
+### STEP1 Design
 <div align="center">
-<img src="https://user-images.githubusercontent.com/52307432/108242592-6e9dd980-7190-11eb-96ec-b431d58bef57.jpg" alt="Your image title"  width="500">
+<img src="https://user-images.githubusercontent.com/52307432/108242592-6e9dd980-7190-11eb-96ec-b431d58bef57.jpg" alt="Your image title"  width="400">
+</div>
+
+### STEP2 Undercarriage design
+<div align="center">
+<img src="https://user-images.githubusercontent.com/52307432/108243713-ba9d4e00-7191-11eb-98ac-c87bb7d3a83c.jpg" alt="Your image title"  width="400">
 </div>
 
 ## Experiment
