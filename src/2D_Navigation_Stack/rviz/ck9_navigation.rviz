@@ -5,6 +5,7 @@ Panels:
     Property Tree Widget:
       Expanded:
         - /Global Options1
+        - /RobotModel1/Status1
         - /TF1/Frames1
       Splitter Ratio: 0.5
     Tree Height: 360
@@ -55,53 +56,18 @@ Visualization Manager:
     - Alpha: 1
       Class: rviz/RobotModel
       Collision Enabled: false
-      Enabled: true
+      Enabled: false
       Links:
         All Links Enabled: true
         Expand Joint Details: false
         Expand Link Details: false
         Expand Tree: false
         Link Tree Style: Links in Alphabetic Order
-        base_footprint:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        base_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        caster_wheel_back:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        caster_wheel_front:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        left_wheel:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        right_wheel:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        sensor_laser:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
       Name: RobotModel
       Robot Description: robot_description
       TF Prefix: ""
       Update Interval: 0
-      Value: true
+      Value: false
       Visual Enabled: true
     - Class: rviz/TF
       Enabled: true
@@ -112,23 +78,13 @@ Visualization Manager:
           Value: true
         base_link:
           Value: false
-        caster_wheel_back:
-          Value: false
-        caster_wheel_front:
-          Value: false
         imu_link:
-          Value: true
+          Value: false
         laser:
-          Value: true
-        left_wheel:
           Value: false
         map:
           Value: true
         odom:
-          Value: true
-        right_wheel:
-          Value: false
-        sensor_laser:
           Value: true
       Marker Scale: 1
       Name: TF
@@ -140,19 +96,9 @@ Visualization Manager:
           odom:
             base_footprint:
               base_link:
-                caster_wheel_back:
-                  {}
-                caster_wheel_front:
-                  {}
                 imu_link:
                   {}
                 laser:
-                  {}
-                left_wheel:
-                  {}
-                right_wheel:
-                  {}
-                sensor_laser:
                   {}
       Update Interval: 0
       Value: true
@@ -430,7 +376,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 4.699958801269531
+      Distance: 6.264512062072754
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -445,10 +391,10 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 1.3347970247268677
+      Pitch: 1.2447973489761353
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 3.14040470123291
+      Yaw: 3.590423345565796
     Saved: ~
 Window Geometry:
   Displays:
