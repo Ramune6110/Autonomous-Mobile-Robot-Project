@@ -1,4 +1,4 @@
-# Autonomous-Rumba-Project using ROS Navigation Stack
+# Autonomous-Mobile-Robot-Project using ROS Navigation Stack
 AMCL is used for localisation, with DWA local planner planner for path planning.
 ## Sensors used
 1. RPLIDAR A1M8
