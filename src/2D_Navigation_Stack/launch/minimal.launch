@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 <launch>
-<include file="$(find rplidar_ros)/launch/rplidar.launch" />
+    <include file="$(find rplidar_ros)/launch/rplidar.launch" />
 
-<include file="$(find 2D_Navigation_Stack)/launch/ck9_states.launch" />
-    
+    <include file="$(find 2D_Navigation_Stack)/launch/ck9_states.launch" />
     <!-- <node name="serial_node" pkg="rosserial_python" type="serial_node.py" args="/dev/ttyACM1" /> -->
     <!-- <include file="$(find mpu6050_serial_to_imu)/launch/demo.launch" /> -->
-    <!-- <node name="twist" pkg="ck9" type="twist.py" /> -->
     <!-- <node name="diff_tf" pkg="2D_Navigation_Stack" type="raw_odom.py" /> -->
     <node name="diff_tf" pkg="2D_Navigation_Stack" type="odometry.py" />
-<!-- <include file="$(find ck9)/launch/smoothometry.launch" /> -->
+    <node pkg="robot_localization" type="ekf_localization_node" name="ekf_se" clear_params="true">
+        <rosparam command="load" file="$(find 2D_Navigation_Stack)/params/ck9_params_adjustment/ekf_config.yaml" />
+    </node>
 </launch>
