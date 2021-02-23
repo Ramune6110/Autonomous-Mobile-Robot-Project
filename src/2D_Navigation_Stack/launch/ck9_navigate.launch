@@ -6,12 +6,16 @@
     
     <!-- AMCL used for localization -->
     <include file="$(find 2D_Navigation_Stack)/launch/ck9_amcl.launch" />
-    
+    <!--<include file="$(find 2D_Navigation_Stack)/launch/amcl.launch" />-->
+
     <!--Robot Description from URDF-->
     <arg name="model" default="$(find 2D_Navigation_Stack)/urdf/ck9_gazebo.xacro"/> 
     <param name="robot_description" command="$(find xacro)/xacro $(arg model) --inorder"/>
     
-    <!-- <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher"/> -->
+    <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher"/> 
+    <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher" output="screen" >
+      <param name="publish_frequency" type="double" value="50.0" />
+    </node>
 
     <!-- move_base -->  
     <!-- <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
@@ -32,6 +36,16 @@
       <rosparam file="$(find 2D_Navigation_Stack)/params/ck9_params_adjustment/dwa_local_planner_params.yaml" command="load" />
       <rosparam file="$(find 2D_Navigation_Stack)/params/ck9_params_adjustment/move_base_params.yaml" command="load" />
     </node>
+
+    <!--<node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+      <param name="base_local_planner" value="dwa_local_planner/DWAPlannerROS" />
+      <rosparam file="$(find 2D_Navigation_Stack)/params/ck9_params_base_link/costmap_common_params.yaml" command="load" ns="global_costmap" />
+      <rosparam file="$(find 2D_Navigation_Stack)/params/ck9_params_base_link/costmap_common_params.yaml" command="load" ns="local_costmap" />
+      <rosparam file="$(find 2D_Navigation_Stack)/params/ck9_params_base_link/local_costmap_params.yaml" command="load" />
+      <rosparam file="$(find 2D_Navigation_Stack)/params/ck9_params_base_link/global_costmap_params.yaml" command="load" />
+      <rosparam file="$(find 2D_Navigation_Stack)/params/ck9_params_base_link/dwa_local_planner_params.yaml" command="load" />
+      <rosparam file="$(find 2D_Navigation_Stack)/params/ck9_params_base_link/move_base_params.yaml" command="load" />
+    </node>-->
 
   <node name="rviz" pkg="rviz" type="rviz" args="-d $(find 2D_Navigation_Stack)/rviz/ck9_navigation.rviz" required="true"/>
 </launch>
