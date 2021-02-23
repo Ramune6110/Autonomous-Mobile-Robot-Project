@@ -6,6 +6,8 @@ find_package(catkin REQUIRED COMPONENTS
   std_msgs
   urdf
   xacro
+  tf
+  nav_msgs
 )
 
 catkin_package(
@@ -19,3 +21,9 @@ include_directories(
 # include
   ${catkin_INCLUDE_DIRS}
 )
+
+#add_executable(odom_mobile_robot mobile_odom.cpp)
+#target_link_libraries(odom_mobile_robot ${catkin_LIBRARIES})
+
+add_executable(mobile_odom src/mobile_odom.cpp)
+target_link_libraries(mobile_odom ${catkin_LIBRARIES})
