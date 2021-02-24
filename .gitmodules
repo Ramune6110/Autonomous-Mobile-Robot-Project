@@ -4,3 +4,6 @@
 [submodule "submodule/hector_slam"]
 	path = submodule/hector_slam
 	url = https://github.com/Ramune6110/hector_slam.git
+[submodule "submodule/navigation2d_example"]
+	path = submodule/navigation2d_example
+	url = https://github.com/Ramune6110/navigation2d_example.git
