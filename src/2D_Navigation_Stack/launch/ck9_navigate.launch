@@ -1,7 +1,7 @@
 <launch>
     <!-- Map server -->
-    <!-- <arg name="map_file" default="$(find 2D_Navigation_Stack)/maps/MK_room.yaml"/> -->
-    <arg name="map_file" default="$(find 2D_Navigation_Stack)/maps/living.yaml"/>
+    <arg name="map_file" default="$(find 2D_Navigation_Stack)/maps/MK_room.yaml"/>
+    <!-- <arg name="map_file" default="$(find 2D_Navigation_Stack)/maps/living.yaml"/> -->
     <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" output="screen"/>
     
     <!-- AMCL used for localization -->
