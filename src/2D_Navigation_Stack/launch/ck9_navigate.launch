@@ -8,15 +8,15 @@
     <include file="$(find 2D_Navigation_Stack)/launch/ck9_amcl.launch" />
     
     <!--Robot Description from URDF-->
-    <arg name="model" default="$(find 2D_Navigation_Stack)/urdf/ck9_gazebo.xacro"/> 
-    <param name="robot_description" command="$(find xacro)/xacro $(arg model) --inorder"/>
+    <!-- <arg name="model" default="$(find 2D_Navigation_Stack)/urdf/ck9_gazebo.xacro"/> 
+    <param name="robot_description" command="$(find xacro)/xacro $(arg model) -inorder"/>
 
     <param name="use_gui" value="true"/> 
 
-    <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher"/>
-    <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher" output="screen" >
+    <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher"/> -->
+    <!-- <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher" output="screen" >
       <param name="publish_frequency" type="double" value="50.0" />
-    </node>
+    </node> -->
 
     <!-- move_base -->  
     <!-- <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
@@ -38,5 +38,5 @@
       <rosparam file="$(find 2D_Navigation_Stack)/params/ck9_params_adjustment/move_base_params.yaml" command="load" />
     </node>
 
-  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find 2D_Navigation_Stack)/rviz/ck9_navigation.rviz" required="true"/>
+  <!-- <node name="rviz" pkg="rviz" type="rviz" args="-d $(find 2D_Navigation_Stack)/rviz/ck9_navigation.rviz" required="true"/> -->
 </launch>
